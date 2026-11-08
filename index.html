@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Posturas de Facilitação — Acervo</title>
+<style>
+:root{--peach:#f7eee5;--sage:#e0e9d9;--olive:#2b3423;--terra:#a8432a;--white:#fff}
+*{box-sizing:border-box}body{margin:0;background:var(--peach);color:var(--olive);font:16px/1.5 Inter,system-ui,Arial,sans-serif}
+header{padding:45px max(20px,calc((100vw - 1150px)/2));background:var(--sage);border-bottom:5px solid var(--terra)}
+h1{font-family:Georgia,serif;font-size:clamp(32px,4vw,55px);margin:0 0 8px}
+h2{font-family:Georgia,serif;font-size:28px;margin:30px 0 16px}
+p{margin:8px 0}main{max-width:1150px;padding:28px 20px 70px;margin:auto}
+nav a{color:var(--terra);font-weight:700;margin-right:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
+.card{background:var(--white);border-radius:18px;overflow:hidden;box-shadow:0 6px 20px #2b342312;display:flex;flex-direction:column}
+.pic{width:100%;aspect-ratio:4/5;object-fit:cover;background:var(--sage)}
+.body{padding:14px}.num{color:var(--terra);font-size:12px;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
+h3{font-size:18px;margin:6px 0}small{display:block;font-size:13px;color:#4a5440}
+.notice{border-left:4px solid var(--terra);background:#fff8f0;padding:14px 18px;border-radius:8px;margin:24px 0}
+code{overflow-wrap:anywhere}footer{padding:30px;background:var(--sage);text-align:center}
+</style>
+</head>
+<body>
+<header>
+  <p style="color:var(--terra);font-weight:700">FORMAÇÃO DE INSTRUTORES, MULTIPLICADORES E TUTORES</p>
+  <h1>Posturas de facilitação</h1>
+  <p>Acervo visual com 20 situações para atividades de classificação e discussão.</p>
+  <nav><a href="./cards.json">Arquivo de dados JSON</a><a href="#recomendadas">Recomendadas</a><a href="#a-evitar">A evitar</a></nav>
+</header>
+<main>
+<div class="notice">Interprete as posturas no contexto da situação: um gesto isolado não define intenção, personalidade ou competência. As imagens ilustram cenas didáticas e não estabelecem estereótipos de gênero.</div>
+<section id="recomendadas"><h2>Posturas recomendadas</h2><div class="grid" id="grid-rec"></div></section>
+<section id="a-evitar"><h2>Posturas a evitar</h2><div class="grid" id="grid-ev"></div></section>
+</main>
+<footer>Dados e imagens deste projeto podem ser usados em um card sorting educacional.</footer>
+<script>
+fetch('./cards.json').then(r=>{if(!r.ok)throw new Error('cards.json não encontrado');return r.json()}).then(d=>{
+for(const c of d.cartas){
+ const card=document.createElement('article');card.className='card';
+ const pic=document.createElement('img');pic.className='pic';pic.src=c.imagem;pic.alt=c.textoAlternativo;pic.loading='lazy';
+ pic.onerror=()=>{pic.style.display='none';const msg=document.createElement('small');msg.textContent='Imagem ainda não enviada ao repositório';msg.style.padding='30px';card.prepend(msg)};
+ const content=document.createElement('div');content.className='body';
+ const num=document.createElement('div');num.className='num';num.textContent='Postura '+String(c.numero).padStart(2,'0');
+ const title=document.createElement('h3');title.textContent=c.titulo;
+ const desc=document.createElement('small');desc.textContent=c.descricao;
+ content.append(num,title,desc);card.append(pic,content);
+ document.getElementById(c.categoria==='recomendada'?'grid-rec':'grid-ev').append(card);
+}
+}).catch(err=>{document.querySelector('main').append('Erro ao carregar dados: '+err.message)});
+</script>
+</body>
+</html>
