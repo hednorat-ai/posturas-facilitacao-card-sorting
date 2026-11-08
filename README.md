@@ -1,33 +1,19 @@
 # Card Sorting — Posturas de Facilitadores
 
-Repositório público de apoio ao curso **Formação de Instrutores, Multiplicadores e Tutores**.
+**Projeto completo:** 20 imagens publicadas e disponíveis para o curso **Formação de Instrutores, Multiplicadores e Tutores**.
 
-## Estado atual
+## Links principais
+- [Galeria de imagens (pasta images)](https://github.com/hednorat-ai/posturas-facilitacao-card-sorting/tree/main/images)
+- [Arquivo de dados cards.json](https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/cards.json)
+- [Primeira imagem](https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/images/postura-01.png)
+- [Última imagem](https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/images/postura-20.png)
 
-- **Posturas 01 a 10:** publicadas em `images/postura-01.png` até `images/postura-10.png`.
-- **Posturas 11 a 20:** pendentes de upload em `images/postura-11.jpg` até `images/postura-20.jpg`.
-- O arquivo `cards.json` reúne os dados das 20 cartas, incluindo categoria, descrição, legenda e endereço da imagem.
-- O arquivo `index.html` é uma galeria para publicação via GitHub Pages.
+## Estrutura
+- `images/postura-01.png` até `images/postura-20.png`.
+- `cards.json`: dados de cada carta, categoria, legenda, descrição e URL pública.
+- `index.html`: galeria de referência; para publicar como website, habilite GitHub Pages em **Settings → Pages**, branch `main`, diretório raiz.
 
-## Teste de links
+## Instrução para o Gemini
+> Crie um aplicativo de card sorting para a formação de instrutores, multiplicadores e tutores. Carregue as cartas de https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/cards.json. Use os URLs do campo `imagem_url`. Embaralhe os cartões, permita classificá-los em "Posturas recomendadas" e "Posturas a evitar", inclua suporte a arrastar/soltar e teclado, feedback pedagógico por carta, placar e reinício. Não infira caráter ou intenção a partir de um gesto isolado; avalie os comportamentos no contexto da situação.
 
-- [Imagem 01](https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/images/postura-01.png)
-- [Dados JSON para o Gemini](https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/cards.json)
-
-## Como enviar as dez imagens restantes
-
-1. Abra a [pasta images](https://github.com/hednorat-ai/posturas-facilitacao-card-sorting/tree/main/images).
-2. Clique em **Add file → Upload files**.
-3. Extraia o pacote ZIP desta conversa e escolha os arquivos `postura-11.jpg` a `postura-20.jpg` da pasta `images`.
-4. Clique em **Commit changes**.
-5. Verifique que os JPG aparecem no diretório `images/`.
-
-É importante preservar os nomes exatos; `cards.json` já utiliza esses endereços. Não é necessário reenviar as dez primeiras imagens.
-
-## Instrução sugerida para o Gemini
-
-> Crie um aplicativo de card sorting com 20 cartões de posturas de facilitadores. Consuma os dados JSON em https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/cards.json. Mostre as imagens dos campos `imagem_url`. Embaralhe os cartões e ofereça duas categorias: Posturas recomendadas e Posturas a evitar. Inclua feedback formativo, pontuação, opção de reiniciar e suporte a teclado. Verifique arquivos indisponíveis antes de construir a interface.
-
-## Atenção pedagógica
-
-Um gesto isolado não demonstra personalidade, intenção ou competência. Avalie a situação didática e evite estereótipos de gênero.
+**Nota:** as imagens das posturas 11 a 20 foram extraídas das páginas correspondentes do PDF original já presente no repositório. Isso significa que podem incluir título e legenda da página, diferentemente dos arquivos de foto isolada.
