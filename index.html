@@ -1,53 +1,91 @@
-<!doctype html>
-<html lang="pt-BR">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Posturas de Facilitação — Acervo</title>
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Card Sorting — Posturas de Facilitação</title>
 <style>
-:root{--peach:#f7eee5;--sage:#e0e9d9;--olive:#2b3423;--terra:#a8432a;--white:#fff}
-*{box-sizing:border-box}body{margin:0;background:var(--peach);color:var(--olive);font:16px/1.5 Inter,system-ui,Arial,sans-serif}
-header{padding:45px max(20px,calc((100vw - 1150px)/2));background:var(--sage);border-bottom:5px solid var(--terra)}
-h1{font-family:Georgia,serif;font-size:clamp(32px,4vw,55px);margin:0 0 8px}
-h2{font-family:Georgia,serif;font-size:28px;margin:30px 0 16px}
-p{margin:8px 0}main{max-width:1150px;padding:28px 20px 70px;margin:auto}
-nav a{color:var(--terra);font-weight:700;margin-right:18px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
-.card{background:var(--white);border-radius:18px;overflow:hidden;box-shadow:0 6px 20px #2b342312;display:flex;flex-direction:column}
-.pic{width:100%;aspect-ratio:4/5;object-fit:cover;background:var(--sage)}
-.body{padding:14px}.num{color:var(--terra);font-size:12px;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
-h3{font-size:18px;margin:6px 0}small{display:block;font-size:13px;color:#4a5440}
-.notice{border-left:4px solid var(--terra);background:#fff8f0;padding:14px 18px;border-radius:8px;margin:24px 0}
-code{overflow-wrap:anywhere}footer{padding:30px;background:var(--sage);text-align:center}
-</style>
-</head>
+:root{--ink:#2b3423;--terra:#a8432a;--sage:#dfe9d9;--peach:#f8e9dc;--paper:#fffaf5;--border:#d8d0c5;--green:#37694b}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 Inter,system-ui,sans-serif}
+header{background:linear-gradient(125deg,var(--sage),var(--peach));padding:30px max(18px,calc((100vw - 1140px)/2));border-bottom:3px solid var(--terra)}
+.kicker{font-weight:800;letter-spacing:.07em;font-size:.76rem;color:var(--terra)}
+h1{font:normal clamp(2rem,4.2vw,3.8rem)/1.06 Georgia,serif;margin:7px 0 10px}
+h2{font:normal 1.55rem Georgia,serif;margin:10px 0}p{margin:8px 0}.shell{max-width:1150px;margin:auto;padding:26px 18px 80px}
+button{cursor:pointer;border:0;border-radius:12px;padding:11px 16px;background:var(--terra);color:white;font:600 1rem Inter,system-ui,sans-serif}
+button:focus-visible,.drop:focus-visible{outline:4px solid #287c6a;outline-offset:3px}button:disabled{opacity:.5;cursor:not-allowed}
+button.ghost{background:var(--sage);color:var(--ink)}
+.toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:16px}
+.progressbar{height:10px;border-radius:99px;background:#ebe2d8;overflow:hidden;margin-bottom:14px}
+#progress{height:100%;width:0;background:var(--green);transition:width .25s}
+.panel{display:grid;grid-template-columns:minmax(270px,1fr) minmax(240px,.8fr);gap:24px}
+#card{background:white;border:1px solid var(--border);border-radius:24px;padding:16px;box-shadow:0 12px 35px #2b342312;max-width:590px}
+#photo{width:100%;height:min(53vh,410px);object-fit:contain;background:#eee7df;border-radius:15px}
+#card h2{font:normal 1.4rem Georgia,serif}#card p{color:#566050}
+.buckets{display:grid;gap:14px;align-content:start}
+.drop{border:2px dashed #a7b8a3;border-radius:19px;min-height:142px;background:#f1f6ed;padding:19px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:8px;transition:background .15s}
+.drop.warn{background:#fff0e6;border-color:#bd8c78}.drop.active{outline:4px solid var(--terra);background:#fae5ce}
+.drop span{font-size:.86rem;color:#586454}.selectrow{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}
+#feedback{min-height:75px;padding:15px 18px;background:#f4eee7;border-left:5px solid var(--terra);border-radius:9px;margin-top:16px}
+#feedback.success{background:#e4f0e3;border-color:var(--green)}#feedback.error{background:#fff1e9}
+.subtle{font-size:.87rem;color:#596358}#results{background:white;border-radius:20px;padding:28px;margin-top:15px}
+#results li{margin:8px 0}footer{margin-top:26px;color:#53604c;font-size:.85rem}
+@media(max-width:730px){.panel{grid-template-columns:1fr}#photo{height:44vh}.drop{min-height:105px}}
+</style></head>
 <body>
-<header>
-  <p style="color:var(--terra);font-weight:700">FORMAÇÃO DE INSTRUTORES, MULTIPLICADORES E TUTORES</p>
-  <h1>Posturas de facilitação</h1>
-  <p>Acervo visual com 20 situações para atividades de classificação e discussão.</p>
-  <nav><a href="./cards.json">Arquivo de dados JSON</a><a href="#recomendadas">Recomendadas</a><a href="#a-evitar">A evitar</a></nav>
-</header>
-<main>
-<div class="notice">Interprete as posturas no contexto da situação: um gesto isolado não define intenção, personalidade ou competência. As imagens ilustram cenas didáticas e não estabelecem estereótipos de gênero.</div>
-<section id="recomendadas"><h2>Posturas recomendadas</h2><div class="grid" id="grid-rec"></div></section>
-<section id="a-evitar"><h2>Posturas a evitar</h2><div class="grid" id="grid-ev"></div></section>
+<header><div class="kicker">FORMAÇÃO DE INSTRUTORES • MULTIPLICADORES • TUTORES</div><h1>Card Sorting: Posturas do Facilitador</h1><p>Observe a cena e classifique a postura de acordo com a condução pedagógica.</p></header>
+<main class="shell">
+<div class="toolbar"><div><strong id="count">Carta 1 de 20</strong> <span class="subtle" id="score">• Pontuação: 0</span></div><button class="ghost" id="restart">Reiniciar e embaralhar</button></div>
+<div class="progressbar"><div id="progress"></div></div>
+<section id="game" class="panel">
+<div><article id="card" draggable="true" tabindex="0" aria-label="Carta de postura, arraste ou escolha uma categoria">
+<img id="photo" src="" alt=""><h2>Qual é a postura representada?</h2><p>Observe a posição corporal, o gesto e a interação com a turma. Evite julgar a personalidade da pessoa.</p></article>
+<p class="subtle">Arraste a carta para uma das categorias ou use os botões. As duas formas funcionam também em telas sensíveis ao toque.</p></div>
+<div><h2>Classifique a situação</h2>
+<div class="buckets">
+<div class="drop" data-choice="recomendada" tabindex="0" role="button" aria-label="Classificar como postura recomendada"><strong>✓ Posturas recomendadas</strong><span>Condutas que favorecem comunicação e facilitação</span></div>
+<div class="drop warn" data-choice="a_evitar" tabindex="0" role="button" aria-label="Classificar como postura a evitar"><strong>↺ Posturas a evitar</strong><span>Condutas que podem prejudicar a interação neste contexto</span></div>
+</div>
+<div class="selectrow"><button data-choice="recomendada">Recomendada</button><button data-choice="a_evitar">A evitar</button></div>
+<div id="feedback" aria-live="polite">Selecione uma categoria para começar.</div>
+<button id="next" style="margin-top:14px" disabled>Próxima postura</button>
+</div>
+</section>
+<section id="results" hidden><h2>Atividade concluída</h2><h3 id="finalscore"></h3><p id="finaltext"></p><ol id="review"></ol><button id="again">Jogar novamente</button></section>
+<footer><strong>Orientação pedagógica:</strong> um gesto isolado não revela intenção, competência ou personalidade. Considere o contexto, a frequência do comportamento, questões culturais e acessibilidade. A classificação é sobre a cena didática, não sobre homens ou mulheres.</footer>
 </main>
-<footer>Dados e imagens deste projeto podem ser usados em um card sorting educacional.</footer>
 <script>
-fetch('./cards.json').then(r=>{if(!r.ok)throw new Error('cards.json não encontrado');return r.json()}).then(d=>{
-for(const c of d.cartas){
- const card=document.createElement('article');card.className='card';
- const pic=document.createElement('img');pic.className='pic';pic.src=c.imagem;pic.alt=c.textoAlternativo;pic.loading='lazy';
- pic.onerror=()=>{pic.style.display='none';const msg=document.createElement('small');msg.textContent='Imagem ainda não enviada ao repositório';msg.style.padding='30px';card.prepend(msg)};
- const content=document.createElement('div');content.className='body';
- const num=document.createElement('div');num.className='num';num.textContent='Postura '+String(c.numero).padStart(2,'0');
- const title=document.createElement('h3');title.textContent=c.titulo;
- const desc=document.createElement('small');desc.textContent=c.descricao;
- content.append(num,title,desc);card.append(pic,content);
- document.getElementById(c.categoria==='recomendada'?'grid-rec':'grid-ev').append(card);
+let cards=[],position=0,score=0,answered=false,answers=[];
+const $=id=>document.getElementById(id);
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function restart(){cards=shuffle([...cards]);position=0;score=0;answers=[];render()}
+function render(){
+ const done=position>=cards.length;
+ $('game').hidden=done;$('results').hidden=!done;
+ $('progress').style.width=(position/cards.length*100)+'%';
+ $('score').textContent='• Pontuação: '+score;
+ if(done){$('count').textContent='Concluído';$('progress').style.width='100%';$('finalscore').textContent=score+' de '+cards.length+' classificações corretas';
+ $('finaltext').textContent='Reveja as situações e discuta como a linguagem corporal influencia a experiência de aprendizagem.';
+ $('review').innerHTML='';
+ answers.forEach(a=>{const li=document.createElement('li');li.textContent=a.numero+'. '+a.titulo+' — '+(a.correct?'correto':'revisar')+'. '+a.descricao;$('review').append(li)});return}
+ answered=false;$('count').textContent='Carta '+(position+1)+' de '+cards.length;
+ const c=cards[position];$('photo').src=c.imagem_url;$('photo').alt='Ilustração da postura número '+c.numero+' (sem antecipar a classificação)';
+ $('feedback').className='';$('feedback').textContent='Escolha a categoria com base na postura retratada.';$('next').disabled=true;
+ document.querySelectorAll('[data-choice]').forEach(x=>x.setAttribute('aria-disabled','false'));
 }
-}).catch(err=>{document.querySelector('main').append('Erro ao carregar dados: '+err.message)});
-</script>
-</body>
-</html>
+function classify(choice){
+ if(answered||position>=cards.length)return;
+ answered=true;const c=cards[position],correct=choice===c.categoria;
+ if(correct)score++;answers.push({...c,correct});
+ $('feedback').className=correct?'success':'error';
+ $('feedback').textContent=(correct?'Correto. ':'Para revisar: ')+c.titulo+'. '+c.descricao+' A categoria esperada é: '+(c.categoria==='recomendada'?'Postura recomendada.':'Postura a evitar.');
+ $('next').disabled=false;$('score').textContent='• Pontuação: '+score;
+ document.querySelectorAll('[data-choice]').forEach(x=>x.setAttribute('aria-disabled','true'));
+}
+document.querySelectorAll('[data-choice]').forEach(el=>{
+ el.addEventListener('click',()=>classify(el.dataset.choice));
+ el.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&el.classList.contains('drop')){e.preventDefault();classify(el.dataset.choice)}});
+ if(el.classList.contains('drop')){el.addEventListener('dragover',e=>{e.preventDefault();el.classList.add('active')});el.addEventListener('dragleave',()=>el.classList.remove('active'));el.addEventListener('drop',e=>{e.preventDefault();el.classList.remove('active');classify(el.dataset.choice)})}
+});
+$('card').addEventListener('dragstart',e=>e.dataTransfer.setData('text/plain','postura'));
+$('next').onclick=()=>{position++;render()};
+$('restart').onclick=restart;$('again').onclick=restart;
+fetch('cards.json').then(r=>{if(!r.ok)throw Error('Falha ao carregar dados');return r.json()}).then(data=>{
+ cards=shuffle(data.cartas.map(c=>({...c,imagem_url:c.imagem_url||c.imagem})));render()
+}).catch(err=>{$('game').innerHTML='<p>Não foi possível carregar as cartas: '+err.message+'. Confira o arquivo cards.json no repositório.</p>'});
+</script></body></html>
