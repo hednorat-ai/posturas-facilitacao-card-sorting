@@ -1,30 +1,33 @@
 # Card Sorting — Posturas de Facilitadores
 
-Acervo didático com **20 situações** para o curso **Formação de Instrutores, Multiplicadores e Tutores**.
+Repositório público de apoio ao curso **Formação de Instrutores, Multiplicadores e Tutores**.
 
-## Situação dos arquivos
-- `cards.json` contém nomes, descrições, classificações, textos alternativos e caminhos das 20 imagens.
-- `index.html` apresenta uma galeria responsiva. Quando as imagens forem enviadas, aparecerão automaticamente.
-- **As imagens JPG precisam ser adicionadas na pasta `images/`**. O manifesto está publicado, mas as 20 fotos ainda não foram transferidas ao repositório.
+## Estado atual
 
-## Como enviar as 20 imagens
-1. Baixe o ZIP fornecido na conversa com o ChatGPT e **extraia** os arquivos.
-2. Abra o repositório no GitHub e clique em **Add file → Upload files**.
-3. Envie a pasta `images` com os arquivos `postura-01.jpg` até `postura-20.jpg`. Se a interface não preservar a pasta, primeiro crie o diretório `images` e faça o upload a partir dele.
-4. Conclua com **Commit changes**.
-5. Abra o arquivo `cards.json` e confira os campos `imagem`: todos esperam `images/postura-NN.jpg`.
+- **Posturas 01 a 10:** publicadas em `images/postura-01.png` até `images/postura-10.png`.
+- **Posturas 11 a 20:** pendentes de upload em `images/postura-11.jpg` até `images/postura-20.jpg`.
+- O arquivo `cards.json` reúne os dados das 20 cartas, incluindo categoria, descrição, legenda e endereço da imagem.
+- O arquivo `index.html` é uma galeria para publicação via GitHub Pages.
 
-## Como usar no Gemini
-Link de dados JSON (público):
-https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/cards.json
+## Teste de links
 
-Exemplo de URL de imagem (funciona somente depois de enviar os JPG):
-https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/images/postura-01.jpg
+- [Imagem 01](https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/images/postura-01.png)
+- [Dados JSON para o Gemini](https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/cards.json)
 
-Peça: "Crie um app de card sorting para classificar 20 posturas de facilitação em 'Posturas recomendadas' e 'Posturas a evitar'. Leia o JSON do link acima, use `imagem_url` de cada carta e embaralhe as cartas. Inclua arrastar e soltar, acessibilidade por teclado e feedback formativo. Ao terminar, mostre acertos e explicações. Não deduza intenção ou personalidade a partir de um gesto isolado."
+## Como enviar as dez imagens restantes
 
-## Habilitar galeria por GitHub Pages
-Em **Settings → Pages**, selecione **Deploy from a branch**, `main` e `/(root)`. Depois acesse o endereço gerado pelo GitHub.
+1. Abra a [pasta images](https://github.com/hednorat-ai/posturas-facilitacao-card-sorting/tree/main/images).
+2. Clique em **Add file → Upload files**.
+3. Extraia o pacote ZIP desta conversa e escolha os arquivos `postura-11.jpg` a `postura-20.jpg` da pasta `images`.
+4. Clique em **Commit changes**.
+5. Verifique que os JPG aparecem no diretório `images/`.
 
-## Nota pedagógica
-Não rotule pessoas como agressivas, simpáticas ou despreparadas em função do gênero ou de um único gesto. O julgamento deve se referir à **conduta observada dentro do contexto da cena**, levando em conta acessibilidade, cultura, situação e frequência.
+É importante preservar os nomes exatos; `cards.json` já utiliza esses endereços. Não é necessário reenviar as dez primeiras imagens.
+
+## Instrução sugerida para o Gemini
+
+> Crie um aplicativo de card sorting com 20 cartões de posturas de facilitadores. Consuma os dados JSON em https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/cards.json. Mostre as imagens dos campos `imagem_url`. Embaralhe os cartões e ofereça duas categorias: Posturas recomendadas e Posturas a evitar. Inclua feedback formativo, pontuação, opção de reiniciar e suporte a teclado. Verifique arquivos indisponíveis antes de construir a interface.
+
+## Atenção pedagógica
+
+Um gesto isolado não demonstra personalidade, intenção ou competência. Avalie a situação didática e evite estereótipos de gênero.
