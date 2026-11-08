@@ -21,12 +21,14 @@ jobs:
         with:
           python-version: "3.11"
       - name: Instalar biblioteca de leitura do PDF
-        run: python -m pip install "pymupdf>=1.24,<2"
+        run: python -m pip install "pymupdf>=1.24,<2" Pillow
       - name: Extrair as dez posturas como PNG
         run: |
           python - <<'PY'
           import fitz
           from pathlib import Path
+          from io import BytesIO
+          from PIL import Image
           pdf = Path("Posturas_Facilitacao_11_a_20.pdf")
           if not pdf.exists():
               raise SystemExit("Arquivo PDF não encontrado.")
@@ -36,9 +38,15 @@ jobs:
           folder = Path("images")
           folder.mkdir(exist_ok=True)
           for index, page in enumerate(doc):
+              images = page.get_images(full=True)
+              if not images:
+                  raise SystemExit(f"Página {index+1} sem imagem")
+              # Extrair a fotografia original, e não a página com legenda
+              xref = max(images, key=lambda a: len(doc.extract_image(a[0])["image"]))[0]
+              im = Image.open(BytesIO(doc.extract_image(xref)["image"])).convert("RGB")
               path = folder / f"postura-{index + 11:02d}.png"
-              page.get_pixmap(matrix=fitz.Matrix(1.6, 1.6), alpha=False).save(path)
-              print("Criado", path)
+              im.save(path, optimize=True)
+              print("Imagem original recuperada:", path, im.size)
           PY
       - name: Publicar imagens no repositório
         run: |
