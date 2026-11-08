@@ -1,103 +1,172 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#e4eadc">
-<title>Card Sorting — Posturas do Facilitador</title>
-<meta name="description" content="Atividade interativa de classificação de 20 posturas para Formação de Instrutores, Multiplicadores e Tutores">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#dce8d8"><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<title>Card Sorting — Posturas de Facilitação | versão revisada</title>
 <style>
-:root{--ink:#2b3423;--ink2:#4a5742;--terracotta:#a8432a;--terracotta-dark:#8f3927;--sage:#dfe8d9;--sage-mid:#d1ddc9;--sage-strong:#3c6b54;--sage-light:#f0f4ec;--cream:#fcf7f1;--peach:#f7e7da;--border:#d7d0c6;--shadow:0 18px 50px rgba(43,52,35,.09);--positive:#3c6b54;--negative:#a8432a;--r:24px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.55 Inter,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}button{font:inherit;cursor:pointer}button:focus-visible,.drop:focus-visible,a:focus-visible{outline:3px solid #bf643f;outline-offset:4px}button:disabled{cursor:not-allowed;opacity:.45}
-.sitebar{display:flex;justify-content:space-between;align-items:center;padding:16px clamp(18px,4.5vw,75px);gap:15px;border-bottom:1px solid #e6ded5;background:rgba(255,253,250,.96)}.brand{font-size:12px;letter-spacing:.13em;font-weight:800;text-transform:uppercase;color:var(--terracotta-dark)}.course{font-size:12px;color:var(--ink2);font-weight:600}.shell{max-width:1240px;margin:auto;padding:clamp(20px,3vw,42px)}
-.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:36px;align-items:center;min-height:460px;background:linear-gradient(115deg,#dde8d7 0 60%,#f6dfce 100%);padding:clamp(26px,5vw,65px);border-radius:30px;overflow:hidden;position:relative}.eyebrow{text-transform:uppercase;letter-spacing:.15em;font-size:12px;font-weight:800;color:var(--terracotta-dark);margin:0 0 12px}.hero h1,h1,h2,.serif{font-family:Georgia,'Times New Roman',serif;letter-spacing:-.035em}.hero h1{font-size:clamp(42px,5.6vw,74px);font-weight:500;line-height:1.07;margin:0 0 22px}.hero p{max-width:620px;font-size:17px}.hero-visual{position:relative;display:flex;align-items:center;justify-content:center;min-height:300px}.visual-stack{display:grid;grid-template-columns:1fr 1fr;gap:10px;transform:rotate(5deg);width:min(100%,340px)}.visual-stack img{width:100%;height:174px;object-fit:cover;border:7px solid #fff;border-radius:18px;box-shadow:var(--shadow)}.visual-stack img:nth-child(2){transform:translateY(25px)}.visual-stack img:nth-child(3){transform:translateY(-20px)}.chip{display:inline-flex;gap:8px;align-items:center;border:1px solid #b9c6b0;background:#fff9;padding:6px 12px;border-radius:99px;font-size:12px;font-weight:700}.chips{display:flex;gap:8px;flex-wrap:wrap;margin:24px 0}.primary,.secondary{border:0;display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:13px;padding:13px 22px;font-weight:750;min-height:48px}.primary{background:var(--terracotta);color:#fff}.primary:hover{background:var(--terracotta-dark)}.secondary{border:1px solid #bccab7;background:#f7f9f4;color:var(--ink)}.secondary:hover{background:#e9f0e4}.intro-lower{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}.info{border:1px solid #e1ddd4;background:#fff;border-radius:18px;padding:18px}.info strong{display:block;margin:0 0 5px;font-size:15px}.info p{margin:0;color:var(--ink2);font-size:13px}
-.hidden{display:none!important}.topline{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.progress-header{display:flex;align-items:baseline;gap:10px}.progress-header h2{font-size:clamp(26px,3.5vw,38px);font-weight:500;margin:0}.muted{color:var(--ink2)}.small{font-size:13px}.progress-track{height:8px;background:#dbe4d5;border-radius:99px;overflow:hidden;margin:17px 0 26px}.progress-fill{height:100%;width:0;background:var(--terracotta);transition:width .35s}.play-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(330px,.9fr);gap:22px;align-items:start}.photo-card{background:#fff;border:1px solid #dfdbd0;box-shadow:var(--shadow);padding:14px;border-radius:24px;max-width:620px;margin:auto}.cardhead{display:flex;justify-content:space-between;align-items:center;margin:0 0 10px;color:var(--ink2);font-size:12px;text-transform:uppercase;letter-spacing:.11em;font-weight:800}.photo-card img{display:block;width:100%;height:min(56vh,480px);object-fit:contain;background:#eae8df;border-radius:14px}.cardfoot{padding:12px 3px 4px;display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap}.cardfoot strong{font-size:16px}.cardfoot small{font-size:12px;color:var(--ink2)}.sort-panel{background:var(--sage-light);border:1px solid #d5decf;border-radius:25px;padding:clamp(18px,3vw,27px)}.sort-panel h3{font-size:clamp(23px,2.6vw,31px);font-family:Georgia,serif;font-weight:500;line-height:1.12;margin:10px 0 12px}.sort-panel>p{margin:0 0 18px}
-.drop{display:flex;gap:14px;align-items:center;text-align:left;padding:18px;min-height:110px;width:100%;border:2px solid transparent;border-radius:17px;margin-bottom:12px;transition:.18s ease}
-.drop.good{background:#edf5ea;border-color:#bfd2bb;color:var(--ink)}
-.drop.good:hover,.drop.good.over{border-color:var(--sage-strong);background:#e5f1e1;transform:translateY(-2px)}
-.drop.bad{background:#fbefe7;border-color:#e0b5a4;color:var(--ink)}
-.drop.bad:hover,.drop.bad.over{border-color:var(--terracotta);background:#f9e4d9;transform:translateY(-2px)}
-.drop .symbol{display:grid;place-items:center;width:49px;height:49px;flex:none;border-radius:14px;font-size:23px}.drop.good .symbol{background:#d5e6d2;color:var(--sage-strong)}.drop.bad .symbol{background:#f2d8c9;color:var(--terracotta)}
-.drop strong{font-size:16px}.drop small{display:block;color:var(--ink2);font-size:12px;margin-top:2px}.helpbar{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:18px;font-size:12px;color:var(--ink2)}.tools{display:flex;gap:8px;flex-wrap:wrap}.tool{border:1px solid #d6d8cd;border-radius:10px;background:#fff;color:var(--ink);padding:8px 13px;font-size:13px}.tool:hover:not(:disabled){background:#f3f5ee}.toast{min-height:48px;padding:13px 16px;background:#e6ecdf;border-radius:12px;font-weight:600;margin-top:18px}.toast:empty{display:none}
-.feedback{margin-top:16px;border-radius:16px;padding:16px 18px;background:#fff;border:1px solid #ddd7cd}.feedback.hidden{display:none!important}.feedback h4{margin:0 0 10px;font-size:18px}.feedback.good{background:#eef6eb;border-color:#c8d9c3}.feedback.bad{background:#fdf0e9;border-color:#e4c0b2}.feedback p{margin:6px 0;color:var(--ink2)}
-.navtools{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-.results-head{background:var(--sage);border-radius:24px;padding:27px;display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:center}.results-head h1{font-size:clamp(30px,4vw,52px);font-weight:500;margin:4px 0 9px}.score-big{font:500 58px/1 Georgia,serif}.score-big small{font:500 20px Inter,sans-serif}.score-box{text-align:center}.result-stats{display:flex;gap:13px;flex-wrap:wrap;margin-top:13px}.stat{border:1px solid #d2cbbd;padding:9px 13px;border-radius:12px;font-size:13px}.result-tools{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0}.review-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:16px}.review-card{background:#fff;border:1px solid #e4dfd7;border-radius:20px;overflow:hidden}.review-card img{width:100%;height:205px;object-fit:cover;object-position:center;display:block;background:#ddd}.review-body{padding:15px}.status{font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:800;color:var(--positive)}.status.wrong{color:var(--negative)}.review-body h3{font-size:16px;margin:7px 0}.review-body p{font-size:13px;line-height:1.55;margin:6px 0;color:var(--ink2)}.correct-label{font-size:12px;font-weight:750;padding:5px 9px;background:#e6eee1;border-radius:8px;display:inline-block;margin:5px 0}.note{border-left:4px solid var(--terracotta);background:#fff6ee;padding:12px 15px;border-radius:5px;font-size:13px;margin-top:20px}.footer{max-width:1240px;margin:auto;padding:20px 26px 40px;font-size:12px;color:var(--ink2);text-align:center}.kbd{display:inline-block;border:1px solid #babfb3;background:#fff;padding:1px 6px;border-radius:5px;font-weight:700}.live{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
-@media(max-width:860px){.hero{grid-template-columns:1fr}.hero-visual{min-height:200px}.visual-stack{max-width:300px}.visual-stack img{height:135px}.play-layout{grid-template-columns:1fr}.photo-card{max-width:570px}.photo-card img{height:min(49vh,430px)}.intro-lower{grid-template-columns:1fr}.sort-panel{margin-top:0}}
-@media(max-width:550px){.sitebar{flex-direction:column;align-items:flex-start}.hero{padding:24px}.shell{padding:12px}.photo-card img{height:330px}.cardhead{font-size:11px}.results-head{padding:18px}.sort-panel{padding:17px}.drop{min-height:86px}.review-grid{grid-template-columns:1fr 1fr;gap:9px}.review-card img{height:130px}.review-body{padding:10px}.review-body p{font-size:12px}.review-body h3{font-size:14px}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+:root{--olive:#2b3423;--ink:#44513c;--terra:#a8432a;--sage:#e1ebdc;--peach:#f9e8da;--cream:#fcf8f3;--green:#315c43;--line:#d8ddcf;--panel:#ffffff}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--olive);font:16px/1.5 Inter,"Segoe UI",system-ui,sans-serif}button{font:inherit;cursor:pointer}button:focus-visible{outline:4px solid #0b7771;outline-offset:3px}button:disabled{opacity:.55;cursor:not-allowed}
+header{padding:26px max(20px,calc((100vw - 1150px)/2));background:linear-gradient(110deg,#e2ecdb 0%,#fae7d8 100%);border-bottom:3px solid var(--terra)}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.1em;font-weight:750;color:var(--terra)}h1{font:normal clamp(30px,5vw,55px)/1.05 Georgia,serif;letter-spacing:-.025em;margin:7px 0 10px}h2{font:normal 27px/1.2 Georgia,serif;margin:0 0 12px}p{margin:8px 0}
+.container{max-width:1150px;padding:23px 19px 70px;margin:auto}.muted{color:#535f4b}.version{display:inline-block;font-size:12px;font-weight:750;background:#fffdf9;padding:6px 11px;border:1px solid #bbcab8;border-radius:99px;margin-top:8px}
+.panel{background:white;border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:0 10px 26px #2b34230a}
+.start{max-width:760px;margin:20px auto}.steps{display:grid;gap:11px;margin:20px 0}.steps p{background:#f2f6ee;border-radius:11px;padding:12px;margin:0}
+.btn{border:0;border-radius:14px;padding:15px 20px;min-height:57px;font-size:17px;font-weight:800;line-height:1.3;transition:filter .15s,transform .15s}.btn:hover:not(:disabled){filter:brightness(.95);transform:translateY(-1px)}.btn-primary{background:var(--terra);color:white}.btn-neutral{background:var(--sage);color:var(--olive)}
+.btn-good{background:var(--green);color:white;border:3px solid #244531}.btn-bad{background:var(--terra);color:white;border:3px solid #82301e}
+.btn-good:hover:not(:disabled){background:#244f37}.btn-bad:hover:not(:disabled){background:#8a3824}
+.hidden{display:none!important}.bar{width:100%;height:10px;background:#e1e5dc;border-radius:99px;overflow:hidden;margin:15px 0 25px}.fill{height:100%;background:var(--green);width:0%;transition:width .15s}
+.toprow{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}.game{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr);gap:23px}
+.image-box{border-radius:18px;background:#f0eee8;overflow:hidden;display:flex;align-items:center;justify-content:center;min-height:320px;position:relative}
+.image-box img{display:block;max-width:100%;width:auto;max-height:min(62vh,590px);object-fit:contain}.image-box .image-loading{position:absolute;background:#fffdf8dd;padding:8px 14px;border-radius:9px;font-size:13px}.image-box.loaded .image-loading{display:none}
+.img-error{padding:24px;text-align:center;background:#fff5eb;border:2px solid #dfb29c;border-radius:15px}.img-error button{margin-top:12px}
+.choices{display:grid;gap:13px;margin:19px 0}
+.choice{width:100%;text-align:left;display:flex;gap:13px;align-items:center;justify-content:flex-start}
+.choice .glyph{font-size:26px;width:33px;flex:none;text-align:center}.choice small{display:block;font-weight:500;font-size:13px;opacity:.95;margin-top:4px}
+.choice.over{box-shadow:0 0 0 5px #e3ce99}
+.feedback{border-left:5px solid var(--green);background:#eef6eb;border-radius:12px;margin-top:20px;padding:18px}
+.feedback.review{border-color:var(--terra);background:#fff0e7}.feedback strong{display:block;margin-bottom:8px;font-size:19px}
+.feedback p{margin:8px 0}.next-area{margin-top:15px}.hint{font-size:13px;color:#596353}
+#results .score{font:normal 56px/1 Georgia,serif;color:var(--green)}.results-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:13px;margin-top:20px}
+.result-card{background:#fbfaf6;border:1px solid #d7dfcf;border-radius:16px;overflow:hidden}.result-card img{width:100%;height:180px;object-fit:cover}.result-body{padding:15px}.result-body h3{font-size:16px;margin:5px 0}.result-body p{font-size:13px;color:#4a5741}.status{font-weight:800;color:var(--green)}.status.wrong{color:var(--terra)}
+footer{font-size:13px;color:#54604d;margin-top:23px;border-top:1px solid #e1ded6;padding-top:15px}
+@media(max-width:810px){.game{grid-template-columns:1fr}.image-box img{max-height:49vh}.container{padding:16px 13px 55px}.panel{padding:17px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important}}
 </style>
 </head>
 <body>
-<header class="sitebar"><div class="brand">Formação de Instrutores, Multiplicadores e Tutores</div><div class="course">Atividade prática · Comunicação e facilitação</div></header>
-<main class="shell">
-<section id="intro">
-<div class="hero"><div><p class="eyebrow">Aprendizagem ativa · Dinâmica de classificação</p><h1>O que a postura comunica?</h1><p>Observe 20 cenas de facilitação e classifique cada uma como <strong>postura recomendada</strong> ou <strong>postura a evitar</strong> no contexto apresentado. A explicação detalhada aparece <strong>somente após a sua resposta</strong>.</p><div class="chips"><span class="chip">◈ 20 imagens originais</span><span class="chip">↔ Classificação interativa</span><span class="chip">◎ Feedback após cada escolha</span></div><button class="primary" id="startBtn">Iniciar atividade <span aria-hidden="true">→</span></button></div>
-<div class="hero-visual" aria-hidden="true"><div class="visual-stack"><img src="images/postura-01.png" alt=""><img src="images/postura-03.png" alt=""><img src="images/postura-11.png" alt=""><img src="images/postura-15.png" alt=""></div></div></div>
-<div class="intro-lower"><div class="info"><strong>1. Observe</strong><p>Analise a situação ilustrada. Os títulos, descrições e categorias ficam ocultos durante a decisão.</p></div><div class="info"><strong>2. Classifique</strong><p>Use os botões, as teclas <b>1</b> e <b>2</b>, ou arraste a imagem para a categoria desejada.</p></div><div class="info"><strong>3. Confira</strong><p>Após responder, receba o feedback da carta e avance para a próxima situação.</p></div></div>
+<header><div class="eyebrow">Formação de Instrutores, Multiplicadores e Tutores</div>
+<h1>O que a postura comunica?</h1><p>Atividade de classificação • Observe, decida e receba uma devolutiva.</p>
+<span class="version">Versão revisada 3.1 • Botões verde e terracota</span></header>
+<main class="container">
+<section id="intro" class="panel start">
+<h2>Como funciona</h2>
+<div class="steps"><p><strong>1. Observe</strong> a imagem sem qualquer descrição ou pista sobre a resposta.</p>
+<p><strong>2. Classifique</strong> como postura recomendada (verde) ou a evitar (terracota).</p>
+<p><strong>3. Confira</strong> a explicação somente após escolher uma categoria.</p></div>
+<p>As 20 cartas aparecerão em ordem aleatória. Você poderá clicar nos botões, usar as teclas 1 e 2 ou arrastar a imagem.</p>
+<button type="button" id="startBtn" class="btn btn-primary">Iniciar atividade</button>
 </section>
-<section id="play" class="hidden" aria-label="Atividade de classificação">
-<div class="topline"><div class="progress-header"><h2>Classifique a postura</h2><span id="progressTxt" class="muted">0 de 20 classificadas</span></div><div class="tools"><button class="tool" id="undo">↶ Desfazer última resposta</button></div></div>
-<div class="progress-track"><div id="bar" class="progress-fill"></div></div>
-<div class="play-layout">
-<article class="photo-card"><div class="cardhead"><span id="cardNum">CARTA 01 / 20</span><span id="imageCount">Observe o gesto</span></div><img id="cardImg" src="" alt="Ilustração de um contexto de facilitação corporativa. Observe a postura e escolha uma categoria." draggable="false"><div class="cardfoot"><strong>Observe a cena antes de classificar</strong><small>Sem descrições ou respostas visíveis antes da sua escolha.</small></div></article>
-<aside class="sort-panel"><span class="eyebrow">Sua decisão</span><h3>Como você classificaria a situação?</h3><p class="muted">Escolha uma categoria. A devolutiva detalhada aparece logo após sua resposta.</p>
-<button class="drop good" data-cat="recomendada"><span class="symbol" aria-hidden="true">✓</span><span><strong>Postura recomendada</strong><small>Favorece comunicação e engajamento na cena</small></span></button>
-<button class="drop bad" data-cat="evitar"><span class="symbol" aria-hidden="true">↻</span><span><strong>Postura a evitar</strong><small>Pode prejudicar a comunicação na cena</small></span></button>
-<div class="helpbar"><span><span class="kbd">1</span> Recomendada</span><span><span class="kbd">2</span> A evitar</span><span><span class="kbd">⌫</span> Desfazer</span></div>
-<div id="notice" class="toast" aria-live="polite"></div>
-<div id="feedbackBox" class="feedback hidden" aria-live="polite">
-  <h4 id="fbTitle"></h4>
-  <p><strong>Sua escolha:</strong> <span id="fbChoice"></span></p>
-  <p><strong>Classificação esperada:</strong> <span id="fbExpected"></span></p>
-  <p id="fbScene"></p>
-  <p id="fbExplain"></p>
+<section id="play" class="hidden">
+<div class="toprow"><div><strong id="counter">Carta 1 de 20</strong><span class="muted"> • <span id="tally">0</span> acertos</span></div>
+<button type="button" class="btn btn-neutral" id="restart">Recomeçar</button></div>
+<div class="bar"><div id="fill" class="fill"></div></div>
+<div class="game">
+<div class="panel">
+<div class="image-box" id="imageBox" draggable="true" aria-label="Carta para classificar">
+<div class="image-loading">Carregando imagem...</div><img id="photo" alt="Cena ilustrativa de uma situação de treinamento para analisar." draggable="false">
 </div>
-<div class="navtools"><button class="primary" id="nextBtn" disabled>Próxima carta</button></div>
-</aside></div></section>
-<section id="results" class="hidden" aria-label="Resultados da atividade"><div class="results-head"><div><p class="eyebrow">Atividade concluída</p><h1>Seu olhar sobre a facilitação</h1><p id="resultMessage" class="muted"></p><div class="result-stats"><span class="stat" id="correctCount"></span><span class="stat" id="wrongCount"></span></div></div><div class="score-box"><div class="score-big"><span id="score">0</span><small>/ 20</small></div><strong id="percent"></strong></div></div><div class="result-tools"><button class="primary" id="retry">↻ Refazer atividade</button><button class="secondary" id="export">↓ Exportar resultado</button><button class="secondary" id="showIncorrect">Revisar diferenças</button></div><h2 style="font:500 31px Georgia,serif">Devolutiva das 20 situações</h2><p class="muted">As situações que merecem revisão aparecem primeiro. A classificação considera o contexto ilustrado.</p><div id="reviewGrid" class="review-grid"></div></section></main>
-<div class="footer">Orientação pedagógica: um gesto isolado não define intenção, competência ou personalidade. A análise considera o <strong>contexto da cena</strong>, respeitando diferentes estilos de comunicação, cultura e acessibilidade.</div>
+<div class="img-error hidden" id="imageError">A imagem desta carta não carregou.<div><button type="button" id="retryImage" class="btn btn-neutral">Recarregar imagem</button></div></div>
+<p class="hint">Observe a imagem e considere o comportamento da pessoa na situação. A descrição será revelada após sua escolha.</p>
+</div>
+<div class="panel">
+<h2>Como você classificaria esta cena?</h2>
+<div class="choices">
+<button type="button" id="goodBtn" class="btn btn-good choice" data-choice="recomendada">
+<span class="glyph" aria-hidden="true">✓</span><span>Postura recomendada<small>Favorece a facilitação no contexto ilustrado</small></span></button>
+<button type="button" id="badBtn" class="btn btn-bad choice" data-choice="a_evitar">
+<span class="glyph" aria-hidden="true">↻</span><span>Postura a evitar<small>Pode prejudicar a interação no contexto ilustrado</small></span></button>
+</div>
+<p class="hint">Atalhos: <strong>1</strong> recomendada, <strong>2</strong> a evitar. Também é possível arrastar a imagem até um botão.</p>
+<div id="feedback" class="feedback hidden" aria-live="polite">
+<strong id="feedbackHeading"></strong>
+<p id="feedbackCategory"></p>
+<p id="feedbackTitle"></p>
+<p id="feedbackDesc"></p>
+</div>
+<div class="next-area"><button type="button" id="nextBtn" class="btn btn-primary hidden">Próxima carta</button></div>
+</div>
+</div>
+</section>
+<section id="results" class="panel hidden">
+<h2>Atividade concluída</h2><p class="score" id="score"></p><p id="summary"></p>
+<button type="button" id="againBtn" class="btn btn-primary">Refazer atividade</button>
+<h2 style="margin-top:32px">Revisão das 20 situações</h2><div id="review" class="results-list"></div>
+</section>
+<footer>As classificações são contextualizadas. Nenhum gesto isolado revela intenção, personalidade ou competência; fatores culturais, individuais e de acessibilidade devem ser considerados. Não associe uma conduta a um gênero.</footer>
+</main>
 <script>
-const cards = [
-  {"id":"postura-01","number":1,"title":"Gestos abertos e naturais","scene":"A facilitadora utiliza gestos abertos e coerentes com a explicação.","explanation":"Gestos que acompanham a fala podem facilitar a compreensão e transmitir abertura. A adequação depende do contexto, não de uma postura única.","correct":"recomendada","image":"images/postura-01.png"},
-  {"id":"postura-02","number":2,"title":"Contato visual distribuído","scene":"O facilitador alterna o olhar entre participantes, sem fixar uma única pessoa.","explanation":"Distribuir a atenção favorece a conexão com o grupo. Em ambientes virtuais ou com necessidades de acessibilidade, outras formas de escuta também são válidas.","correct":"recomendada","image":"images/postura-02.png"},
-  {"id":"postura-03","number":3,"title":"Convite à participação","scene":"A facilitadora utiliza expressão acolhedora e mãos abertas ao interagir com a turma.","explanation":"O convite à participação deve combinar linguagem verbal, escuta e espaço para respostas, e não apenas um sorriso.","correct":"recomendada","image":"images/postura-03.png"},
-  {"id":"postura-04","number":4,"title":"Movimentação intencional","scene":"O facilitador se desloca com tranquilidade pelo espaço enquanto acompanha a turma.","explanation":"Circular pode aproximar o facilitador dos participantes e ajudar a observar a atividade. Movimentos constantes e sem propósito podem distrair.","correct":"recomendada","image":"images/postura-04.png"},
-  {"id":"postura-05","number":5,"title":"Escuta com atenção","scene":"A facilitadora se inclina discretamente em direção a alguém que está falando.","explanation":"Escuta ativa envolve atenção à fala, perguntas de esclarecimento e respeito ao ritmo do participante. Inclinar-se é uma possibilidade, não uma obrigação.","correct":"recomendada","image":"images/postura-05.png"},
-  {"id":"postura-06","number":6,"title":"Indicação com a mão aberta","scene":"O facilitador direciona a atenção para o material usando a mão aberta.","explanation":"O gesto amplo e preciso indica a informação relevante sem parecer acusatório; o ideal é continuar dialogando com a turma.","correct":"recomendada","image":"images/postura-06.png"},
-  {"id":"postura-07","number":7,"title":"Presença no ambiente online","scene":"A facilitadora direciona o olhar à câmera durante a explicação.","explanation":"Olhar para a câmera em momentos-chave pode criar sensação de contato. É importante, também, acompanhar o chat e outras formas de participação.","correct":"recomendada","image":"images/postura-07.png"},
-  {"id":"postura-08","number":8,"title":"Gestos sincronizados com a fala","scene":"O facilitador utiliza movimentos calmos para enfatizar pontos importantes.","explanation":"Gesticulação coerente com o discurso ajuda a orientar a atenção. Não existe uma única forma corporal correta de comunicação.","correct":"recomendada","image":"images/postura-08.png"},
-  {"id":"postura-09","number":9,"title":"Postura confortável e alinhada","scene":"A facilitadora mantém uma base estável com braços relaxados.","explanation":"Uma postura estável pode favorecer conforto e clareza; adaptações corporais e necessidades individuais devem ser respeitadas.","correct":"recomendada","image":"images/postura-09.png"},
-  {"id":"postura-10","number":10,"title":"Entusiasmo equilibrado","scene":"O facilitador expressa interesse com gestos intencionais e naturais.","explanation":"O entusiasmo é mais eficaz quando acompanha o propósito e abre espaço para participação, sem se transformar em agitação constante.","correct":"recomendada","image":"images/postura-10.png"},
-  {"id":"postura-11","number":11,"title":"Barreira corporal em contexto defensivo","scene":"Na cena, a facilitadora permanece de braços cruzados e expressão fechada diante da turma.","explanation":"Braços cruzados, isoladamente, não significam defesa. Aqui, o conjunto da cena sugere distanciamento; a alternativa é manter a interação e sinalizar disponibilidade.","correct":"evitar","image":"images/postura-11.png"},
-  {"id":"postura-12","number":12,"title":"Leitura de slides de costas","scene":"O facilitador permanece de costas, lendo a projeção sem se conectar ao grupo.","explanation":"Apontar para um slide é útil em momentos pontuais; ler toda a apresentação de costas dificulta a comunicação e a percepção de dúvidas.","correct":"evitar","image":"images/postura-12.png"},
-  {"id":"postura-13","number":13,"title":"Pouca presença durante a explicação","scene":"A facilitadora mantém as mãos nos bolsos e participa pouco da dinâmica.","explanation":"Mãos nos bolsos não são um erro por si só. Na situação retratada, a combinação com desconexão da atividade reduz o apoio visual à explicação.","correct":"evitar","image":"images/postura-13.png"},
-  {"id":"postura-14","number":14,"title":"Ausência de contato com o grupo","scene":"O facilitador mantém o olhar baixo e evita acompanhar as reações da turma.","explanation":"Posturas corporais variam entre pessoas. O ponto de atenção é não monitorar dúvidas nem responder às necessidades do grupo.","correct":"evitar","image":"images/postura-14.png"},
-  {"id":"postura-15","number":15,"title":"Apontar de modo confrontativo","scene":"A facilitadora direciona o dedo a uma pessoa em tom de cobrança.","explanation":"Apontar diretamente para um participante pode ser percebido como acusação. Prefira perguntas, referência ao comportamento observável e gestos neutros.","correct":"evitar","image":"images/postura-15.png"},
-  {"id":"postura-16","number":16,"title":"Apoio passivo na mesa","scene":"O facilitador se debruça sobre a mesa enquanto a turma aguarda.","explanation":"Apoiar-se pode ser confortável e legítimo. Nesta cena, a falta de interação com o grupo é o aspecto a corrigir.","correct":"evitar","image":"images/postura-16.png"},
-  {"id":"postura-17","number":17,"title":"Tensão na bancada","scene":"A facilitadora segura com força a bancada durante a apresentação.","explanation":"A tensão sustentada pode dificultar gestos naturais e a fluidez da comunicação. Pausas e apoio ergonômico podem ajudar, sem julgamento sobre nervosismo.","correct":"evitar","image":"images/postura-17.png"},
-  {"id":"postura-18","number":18,"title":"Consulta repetida ao relógio","scene":"O facilitador interrompe a atenção ao grupo para consultar o relógio continuamente.","explanation":"Monitorar o tempo é necessário; a consulta excessiva e ostensiva pode interromper o vínculo. Use cronômetro discreto e marcos do roteiro.","correct":"evitar","image":"images/postura-18.png"},
-  {"id":"postura-19","number":19,"title":"Distração pelo celular","scene":"A facilitadora olha para o celular enquanto um participante espera atenção.","explanation":"O problema é ignorar a interação. O celular pode ser um recurso pedagógico válido quando seu uso é explicado e intencional.","correct":"evitar","image":"images/postura-19.png"},
-  {"id":"postura-20","number":20,"title":"Movimentação excessiva","scene":"O facilitador gesticula de forma intensa e contínua, competindo com a explicação.","explanation":"Movimentos podem enriquecer a fala, mas excesso persistente pode desviar a atenção. Busque gestos intencionais e pausas.","correct":"evitar","image":"images/postura-20.png"}
-];
-let deck=[], answers={}, cursor=0, completed=false, locked=false;
-const $=q=>document.querySelector(q);
-const intro=$('#intro'), play=$('#play'), results=$('#results'), cardImg=$('#cardImg');
-function shuffle(arr){let a=[...arr];for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
-function cat(c){return c==='recomendada'?'Postura recomendada':'Postura a evitar'}
-function answeredCount(){return Object.keys(answers).length}
-function setChoiceEnabled(enabled){document.querySelectorAll('[data-cat]').forEach(el=>el.disabled=!enabled);locked=!enabled;}
-function hideFeedback(){const box=$('#feedbackBox');box.className='feedback hidden';$('#fbTitle').textContent='';$('#fbChoice').textContent='';$('#fbExpected').textContent='';$('#fbScene').textContent='';$('#fbExplain').textContent='';$('#nextBtn').disabled=true;}
-function start(){deck=shuffle(cards);answers={};cursor=0;completed=false;intro.classList.add('hidden');results.classList.add('hidden');play.classList.remove('hidden');$('#reviewGrid').innerHTML='';draw();window.scrollTo({top:0,behavior:'smooth'});}
-function draw(){while(cursor<deck.length && answers[deck[cursor].id])cursor++; const n=answeredCount(); $('#progressTxt').textContent=`${n} de ${deck.length} classificadas`; $('#bar').style.width=(100*n/deck.length)+'%'; $('#undo').disabled=n===0; if(cursor>=deck.length){finish();return;} const item=deck[cursor]; cardImg.src=item.image; $('#cardNum').textContent=`CARTA ${String(n+1).padStart(2,'0')} / ${deck.length}`; $('#imageCount').textContent='Observe o gesto'; $('#notice').textContent='Escolha uma categoria para registrar sua resposta.'; hideFeedback(); setChoiceEnabled(true);  }
-function choose(category){if(completed||cursor>=deck.length||locked)return; const item=deck[cursor]; answers[item.id]=category; setChoiceEnabled(false); const hit=category===item.correct; $('#notice').textContent='Resposta registrada.'; const box=$('#feedbackBox'); box.className='feedback '+(hit?'good':'bad'); $('#fbTitle').textContent=hit?'Correto.':'Vale revisar.'; $('#fbChoice').textContent=cat(category); $('#fbExpected').textContent=cat(item.correct); $('#fbScene').textContent=item.scene; $('#fbExplain').textContent=item.explanation; $('#nextBtn').disabled=false; }
-function nextCard(){ if(cursor<deck.length){cursor++; draw();} }
-function undo(){ if(completed)return; const lastAnswered=deck.findLastIndex(x=>answers[x.id]); if(lastAnswered<0)return; delete answers[deck[lastAnswered].id]; cursor=lastAnswered; draw(); $('#notice').textContent='Última classificação desfeita.'; }
-function finish(){completed=true; play.classList.add('hidden'); results.classList.remove('hidden'); const good=deck.filter(c=>answers[c.id]===c.correct).length; const pct=Math.round(good/cards.length*100); $('#score').textContent=good; $('#percent').textContent=pct+'%'; $('#correctCount').textContent=`${good} acertos`; $('#wrongCount').textContent=`${cards.length-good} pontos para revisar`; $('#resultMessage').textContent=good===20?'Excelente: todas as classificações corresponderam às situações propostas.':good>=15?'Bom desempenho. Revise as situações com respostas diferentes.':good>=10?'Você identificou parte das situações. O debate sobre contexto ajudará a aprofundar a análise.':'Esta é uma oportunidade para observar como contexto e intenção comunicativa influenciam a leitura de cada cena.'; const list=deck.map(c=>({c,hit:answers[c.id]===c.correct})).sort((a,b)=>Number(a.hit)-Number(b.hit)); const grid=$('#reviewGrid'); grid.textContent=''; list.forEach(({c,hit})=>{const article=document.createElement('article');article.className='review-card';const img=document.createElement('img');img.src=c.image;img.alt='Imagem da postura '+c.number;img.loading='lazy';const body=document.createElement('div');body.className='review-body';const st=document.createElement('div');st.className='status'+(hit?'':' wrong');st.textContent=hit?'✓ Classificação esperada':'↻ Vale revisar';const title=document.createElement('h3');title.textContent='Postura '+c.number+' — '+c.title;const lab=document.createElement('div');lab.className='correct-label';lab.textContent=cat(c.correct);const submitted=document.createElement('p');submitted.textContent='Sua escolha: '+cat(answers[c.id]);const scene=document.createElement('p');scene.textContent=c.scene;const explain=document.createElement('p');explain.textContent=c.explanation;body.append(st,title,lab,submitted,scene,explain);article.append(img,body);grid.append(article)}); window.scrollTo({top:0,behavior:'smooth'}); }
-function exportResult(){let good=cards.filter(c=>answers[c.id]===c.correct).length;let lines=['CARD SORTING — POSTURAS DO FACILITADOR',`Resultado: ${good} de ${cards.length} acertos`,...deck.map(c=>`Postura ${c.number}: ${cat(answers[c.id])} | esperado: ${cat(c.correct)} | ${answers[c.id]===c.correct?'acerto':'revisar'}`)];const blob=new Blob([lines.join('\n')],{type:'text/plain;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='resultado-card-sorting.txt';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),500);}
-$('#startBtn').addEventListener('click',start); $('#retry').addEventListener('click',start); $('#undo').addEventListener('click',undo); $('#export').addEventListener('click',exportResult); $('#showIncorrect').addEventListener('click',()=>{const wrong=[...$('#reviewGrid').children].filter(x=>x.querySelector('.wrong'));wrong[0]?.scrollIntoView({behavior:'smooth',block:'center'});}); $('#nextBtn').addEventListener('click',nextCard);
-document.querySelectorAll('[data-cat]').forEach(el=>{el.addEventListener('click',()=>choose(el.dataset.cat)); el.addEventListener('dragover',e=>{if(locked)return; e.preventDefault(); el.classList.add('over')}); el.addEventListener('dragleave',()=>el.classList.remove('over')); el.addEventListener('drop',e=>{if(locked)return; e.preventDefault(); el.classList.remove('over'); choose(el.dataset.cat)});});
-cardImg.addEventListener('dragstart',e=>{if(locked){e.preventDefault();return;} e.dataTransfer.effectAllowed='move'; e.dataTransfer.setData('text/plain','postura')}); cardImg.draggable=true;
-window.addEventListener('keydown',e=>{if(play.classList.contains('hidden')||e.target.closest('button,input,textarea,select'))return; if((e.key==='ArrowLeft'||e.key==='1')&&!locked){e.preventDefault();choose('recomendada')} if((e.key==='ArrowRight'||e.key==='2')&&!locked){e.preventDefault();choose('evitar')} if((e.key==='Enter'||e.key===' ')&&locked&&!$('#nextBtn').disabled){e.preventDefault();nextCard()} if(e.key==='Backspace'){e.preventDefault();undo()}});
-</script>
-</body>
-</html>
+const CARDS = [{"id":"postura-01","numero":1,"titulo":"Facilitadora com braços abertos","descricao":"Facilitadora confiante, com braços abertos e gesticulação natural.","categoria":"recomendada","imagem":"images/postura-01.png"},{"id":"postura-02","numero":2,"titulo":"Contato visual acolhedor","descricao":"Facilitador fazendo contato visual acolhedor com os participantes.","categoria":"recomendada","imagem":"images/postura-02.png"},{"id":"postura-03","numero":3,"titulo":"Mãos abertas para engajar","descricao":"Facilitadora sorridente, com as mãos abertas para engajar a turma.","categoria":"recomendada","imagem":"images/postura-03.png"},{"id":"postura-04","numero":4,"titulo":"Movimentação tranquila","descricao":"Facilitador caminhando tranquilamente pelo espaço com postura ereta.","categoria":"recomendada","imagem":"images/postura-04.png"},{"id":"postura-05","numero":5,"titulo":"Escuta ativa","descricao":"Facilitadora ouvindo um participante com atenção e inclinação leve.","categoria":"recomendada","imagem":"images/postura-05.png"},{"id":"postura-06","numero":6,"titulo":"Apontar com a mão aberta","descricao":"Facilitador indicando o slide com a mão aberta, sem apontar o dedo.","categoria":"recomendada","imagem":"images/postura-06.png"},{"id":"postura-07","numero":7,"titulo":"Presença diante da câmera","descricao":"Facilitadora online olhando diretamente para a câmera com semblante amigável.","categoria":"recomendada","imagem":"images/postura-07.png"},{"id":"postura-08","numero":8,"titulo":"Gestos calmos","descricao":"Facilitador em frente à turma utilizando gestos calmos e alinhados à fala.","categoria":"recomendada","imagem":"images/postura-08.png"},{"id":"postura-09","numero":9,"titulo":"Postura alinhada","descricao":"Facilitadora em pé, com pernas alinhadas e braços relaxados.","categoria":"recomendada","imagem":"images/postura-09.png"},{"id":"postura-10","numero":10,"titulo":"Entusiasmo genuíno","descricao":"Facilitador expressando entusiasmo genuíno com gestos acolhedores.","categoria":"recomendada","imagem":"images/postura-10.png"},{"id":"postura-11","numero":11,"titulo":"Braços cruzados","descricao":"Facilitadora com os braços cruzados diante do grupo, criando uma barreira corporal na situação retratada.","categoria":"a_evitar","imagem":"images/postura-11.png"},{"id":"postura-12","numero":12,"titulo":"De costas para a turma","descricao":"Facilitador de costas, lendo e apontando para a projeção sem manter contato com a turma.","categoria":"a_evitar","imagem":"images/postura-12.png"},{"id":"postura-13","numero":13,"titulo":"Mãos nos bolsos","descricao":"Facilitadora com mãos nos bolsos e pouca presença corporal no contexto retratado.","categoria":"a_evitar","imagem":"images/postura-13.png"},{"id":"postura-14","numero":14,"titulo":"Ombros encolhidos e olhar baixo","descricao":"Facilitador com ombros encolhidos, olhando para baixo e evitando contato visual.","categoria":"a_evitar","imagem":"images/postura-14.png"},{"id":"postura-15","numero":15,"titulo":"Apontar o dedo de forma hostil","descricao":"Facilitadora apontando o dedo com expressão de confronto em direção a um participante.","categoria":"a_evitar","imagem":"images/postura-15.png"},{"id":"postura-16","numero":16,"titulo":"Apoio excessivo na mesa","descricao":"Facilitador apoiado na mesa de maneira desleixada durante a apresentação.","categoria":"a_evitar","imagem":"images/postura-16.png"},{"id":"postura-17","numero":17,"titulo":"Segurar firmemente a bancada","descricao":"Facilitadora segurando a bancada de forma tensa ao falar.","categoria":"a_evitar","imagem":"images/postura-17.png"},{"id":"postura-18","numero":18,"titulo":"Consultar repetidamente o relógio","descricao":"Facilitador olhando para o relógio de pulso repetidamente, aparentando impaciência.","categoria":"a_evitar","imagem":"images/postura-18.png"},{"id":"postura-19","numero":19,"titulo":"Distração com o celular","descricao":"Facilitadora olhando para o celular enquanto a turma aguarda.","categoria":"a_evitar","imagem":"images/postura-19.png"},{"id":"postura-20","numero":20,"titulo":"Gesticulação frenética","descricao":"Facilitador gesticulando de forma frenética e ansiosa durante a explicação.","categoria":"a_evitar","imagem":"images/postura-20.png"}];
+const $ = (id) => document.getElementById(id);
+let deck=[], index=0, points=0, selected=null, records=[],loadSeq=0;
+const expected = (c) => c==="recomendada"?"Postura recomendada":"Postura a evitar";
+function shuffle(items){const a=items.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a}
+function begin(){deck=shuffle(CARDS);index=0;points=0;selected=null;records=[];$("intro").classList.add("hidden");$("results").classList.add("hidden");$("play").classList.remove("hidden");showCard();window.scrollTo({top:0,behavior:"smooth"})}
+function loadImage(){
+ const c=deck[index],seq=++loadSeq;
+ $("imageError").classList.add("hidden");
+ $("imageBox").classList.remove("loaded");
+ $("photo").onload=()=>{if(seq!==loadSeq)return;$("imageBox").classList.add("loaded");};
+ $("photo").onerror=()=>{if(seq!==loadSeq)return;$("imageBox").classList.remove("loaded");$("imageError").classList.remove("hidden");$("imageBox").querySelector(".image-loading").textContent="A imagem não carregou";};
+ $("imageBox").querySelector(".image-loading").textContent="Carregando imagem...";
+ // Diretório padronizado, confirmado no repositório
+ $("photo").src=c.imagem+"?v=20261108-r31-"+seq;
+}
+function showCard(){
+ if(index>=deck.length){finish();return}
+ selected=null;
+ $("counter").textContent="Carta "+(index+1)+" de "+deck.length;
+ $("tally").textContent=points;
+ $("fill").style.width=String(index/deck.length*100)+"%";
+ $("feedback").className="feedback hidden";
+ $("feedbackHeading").textContent="";
+ $("feedbackCategory").textContent="";
+ $("feedbackTitle").textContent="";
+ $("feedbackDesc").textContent="";
+ $("nextBtn").classList.add("hidden");
+ $("goodBtn").disabled=false;$("badBtn").disabled=false;
+ loadImage();
+}
+function classify(choice){
+ if(selected!==null||index>=deck.length)return;
+ const c=deck[index];
+ selected=choice;
+ const right=(choice===c.categoria);
+ if(right)points++;
+ records.push({card:c,choice,right});
+ $("tally").textContent=points;
+ $("goodBtn").disabled=true;$("badBtn").disabled=true;
+ $("feedback").className="feedback"+(right?"":" review");
+ $("feedbackHeading").textContent=right?"✓ Correto!":"↻ Vamos revisar essa situação";
+ $("feedbackCategory").textContent="Sua escolha: "+expected(choice)+" · Esperado: "+expected(c.categoria);
+ $("feedbackTitle").textContent=c.titulo;
+ $("feedbackDesc").textContent=c.descricao;
+ $("nextBtn").textContent=index===deck.length-1?"Ver resultado":"Próxima carta";
+ $("nextBtn").classList.remove("hidden");
+}
+function advance(){if(selected===null)return;index++;showCard()}
+function finish(){
+ $("play").classList.add("hidden");$("results").classList.remove("hidden");
+ $("score").textContent=points+" / "+deck.length+" acertos";
+ $("summary").textContent="Revise as situações abaixo. A classificação foi feita com base na proposta pedagógica de cada cena.";
+ $("review").replaceChildren();
+ for(const r of records){
+ const el=document.createElement("article");el.className="result-card";
+ const img=document.createElement("img");img.src=r.card.imagem;img.alt="Imagem da situação analisada";
+ const body=document.createElement("div");body.className="result-body";
+ const s=document.createElement("div");s.className="status"+(r.right?"":" wrong");s.textContent=r.right?"✓ Acerto":"↻ Revisar";
+ const h=document.createElement("h3");h.textContent=r.card.titulo;
+ const p=document.createElement("p");p.textContent="Sua escolha: "+expected(r.choice)+". Esperado: "+expected(r.card.categoria)+". "+r.card.descricao;
+ body.append(s,h,p);el.append(img,body);$("review").append(el);
+ }
+ $("fill").style.width="100%";window.scrollTo({top:0,behavior:"smooth"});
+}
+$("startBtn").addEventListener("click",begin);
+$("restart").addEventListener("click",begin);
+$("againBtn").addEventListener("click",begin);
+$("goodBtn").addEventListener("click",()=>classify("recomendada"));
+$("badBtn").addEventListener("click",()=>classify("a_evitar"));
+$("nextBtn").addEventListener("click",advance);
+$("retryImage").addEventListener("click",loadImage);
+$("imageBox").addEventListener("dragstart",e=>{if(selected!==null){e.preventDefault();return}e.dataTransfer.setData("text/plain","facilitacao")});
+for(const el of [$("goodBtn"),$("badBtn")]){
+ el.addEventListener("dragover",e=>{if(selected!==null)return;e.preventDefault();el.classList.add("over")});
+ el.addEventListener("dragleave",()=>el.classList.remove("over"));
+ el.addEventListener("drop",e=>{e.preventDefault();el.classList.remove("over");classify(el.dataset.choice)});
+}
+window.addEventListener("keydown",e=>{
+ if($("play").classList.contains("hidden")||["INPUT","TEXTAREA","SELECT"].includes(document.activeElement?.tagName))return;
+ if(selected===null && e.key==="1"){e.preventDefault();classify("recomendada")}
+ else if(selected===null&&e.key==="2"){e.preventDefault();classify("a_evitar")}
+ else if(selected!==null&&e.key==="Enter"&&!["BUTTON"].includes(document.activeElement?.tagName)){e.preventDefault();advance()}
+});
+</script></body></html>
