@@ -49,5 +49,6 @@ jobs:
             echo "Imagens já atualizadas."
           else
             git commit -m "Gerar imagens PNG individuais das posturas 11 a 20"
-            git push
+            git pull --rebase origin main
+            git push origin HEAD:main
           fi
