@@ -20,9 +20,10 @@
       "titulo": "Facilitadora com braços abertos",
       "descricao": "Facilitadora confiante, com braços abertos e gesticulação natural.",
       "categoria": "recomendada",
-      "imagem": "images/postura-01.jpg",
-      "imagem_url": "https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/images/postura-01.jpg",
-      "textoAlternativo": "Facilitadora confiante, com braços abertos e gesticulação natural."
+      "imagem": "images/postura-01.png",
+      "imagem_url": "https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/images/postura-01.png",
+      "textoAlternativo": "Facilitadora confiante, com braços abertos e gesticulação natural.",
+      "disponivel": true
     },
     {
       "id": "postura-02",
@@ -30,9 +31,10 @@
       "titulo": "Contato visual acolhedor",
       "descricao": "Facilitador fazendo contato visual acolhedor com os participantes.",
       "categoria": "recomendada",
-      "imagem": "images/postura-02.jpg",
-      "imagem_url": "https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/images/postura-02.jpg",
-      "textoAlternativo": "Facilitador fazendo contato visual acolhedor com os participantes."
+      "imagem": "images/postura-02.png",
+      "imagem_url": "https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/images/postura-02.png",
+      "textoAlternativo": "Facilitador fazendo contato visual acolhedor com os participantes.",
+      "disponivel": true
     },
     {
       "id": "postura-03",
@@ -40,9 +42,10 @@
       "titulo": "Mãos abertas para engajar",
       "descricao": "Facilitadora sorridente, com as mãos abertas para engajar a turma.",
       "categoria": "recomendada",
-      "imagem": "images/postura-03.jpg",
-      "imagem_url": "https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/images/postura-03.jpg",
-      "textoAlternativo": "Facilitadora sorridente, com as mãos abertas para engajar a turma."
+      "imagem": "images/postura-03.png",
+      "imagem_url": "https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/images/postura-03.png",
+      "textoAlternativo": "Facilitadora sorridente, com as mãos abertas para engajar a turma.",
+      "disponivel": true
     },
     {
       "id": "postura-04",
@@ -50,9 +53,10 @@
       "titulo": "Movimentação tranquila",
       "descricao": "Facilitador caminhando tranquilamente pelo espaço com postura ereta.",
       "categoria": "recomendada",
-      "imagem": "images/postura-04.jpg",
-      "imagem_url": "https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/images/postura-04.jpg",
-      "textoAlternativo": "Facilitador caminhando tranquilamente pelo espaço com postura ereta."
+      "imagem": "images/postura-04.png",
+      "imagem_url": "https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/images/postura-04.png",
+      "textoAlternativo": "Facilitador caminhando tranquilamente pelo espaço com postura ereta.",
+      "disponivel": true
     },
     {
       "id": "postura-05",
@@ -60,9 +64,10 @@
       "titulo": "Escuta ativa",
       "descricao": "Facilitadora ouvindo um participante com atenção e inclinação leve.",
       "categoria": "recomendada",
-      "imagem": "images/postura-05.jpg",
-      "imagem_url": "https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/images/postura-05.jpg",
-      "textoAlternativo": "Facilitadora ouvindo um participante com atenção e inclinação leve."
+      "imagem": "images/postura-05.png",
+      "imagem_url": "https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/images/postura-05.png",
+      "textoAlternativo": "Facilitadora ouvindo um participante com atenção e inclinação leve.",
+      "disponivel": true
     },
     {
       "id": "postura-06",
@@ -70,9 +75,10 @@
       "titulo": "Apontar com a mão aberta",
       "descricao": "Facilitador indicando o slide com a mão aberta, sem apontar o dedo.",
       "categoria": "recomendada",
-      "imagem": "images/postura-06.jpg",
-      "imagem_url": "https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/images/postura-06.jpg",
-      "textoAlternativo": "Facilitador indicando o slide com a mão aberta, sem apontar o dedo."
+      "imagem": "images/postura-06.png",
+      "imagem_url": "https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/images/postura-06.png",
+      "textoAlternativo": "Facilitador indicando o slide com a mão aberta, sem apontar o dedo.",
+      "disponivel": true
     },
     {
       "id": "postura-07",
@@ -80,9 +86,10 @@
       "titulo": "Presença diante da câmera",
       "descricao": "Facilitadora online olhando diretamente para a câmera com semblante amigável.",
       "categoria": "recomendada",
-      "imagem": "images/postura-07.jpg",
-      "imagem_url": "https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/images/postura-07.jpg",
-      "textoAlternativo": "Facilitadora online olhando diretamente para a câmera com semblante amigável."
+      "imagem": "images/postura-07.png",
+      "imagem_url": "https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/images/postura-07.png",
+      "textoAlternativo": "Facilitadora online olhando diretamente para a câmera com semblante amigável.",
+      "disponivel": true
     },
     {
       "id": "postura-08",
@@ -90,9 +97,10 @@
       "titulo": "Gestos calmos",
       "descricao": "Facilitador em frente à turma utilizando gestos calmos e alinhados à fala.",
       "categoria": "recomendada",
-      "imagem": "images/postura-08.jpg",
-      "imagem_url": "https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/images/postura-08.jpg",
-      "textoAlternativo": "Facilitador em frente à turma utilizando gestos calmos e alinhados à fala."
+      "imagem": "images/postura-08.png",
+      "imagem_url": "https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/images/postura-08.png",
+      "textoAlternativo": "Facilitador em frente à turma utilizando gestos calmos e alinhados à fala.",
+      "disponivel": true
     },
     {
       "id": "postura-09",
@@ -100,9 +108,10 @@
       "titulo": "Postura alinhada",
       "descricao": "Facilitadora em pé, com pernas alinhadas e braços relaxados.",
       "categoria": "recomendada",
-      "imagem": "images/postura-09.jpg",
-      "imagem_url": "https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/images/postura-09.jpg",
-      "textoAlternativo": "Facilitadora em pé, com pernas alinhadas e braços relaxados."
+      "imagem": "images/postura-09.png",
+      "imagem_url": "https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/images/postura-09.png",
+      "textoAlternativo": "Facilitadora em pé, com pernas alinhadas e braços relaxados.",
+      "disponivel": true
     },
     {
       "id": "postura-10",
@@ -110,9 +119,10 @@
       "titulo": "Entusiasmo genuíno",
       "descricao": "Facilitador expressando entusiasmo genuíno com gestos acolhedores.",
       "categoria": "recomendada",
-      "imagem": "images/postura-10.jpg",
-      "imagem_url": "https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/images/postura-10.jpg",
-      "textoAlternativo": "Facilitador expressando entusiasmo genuíno com gestos acolhedores."
+      "imagem": "images/postura-10.png",
+      "imagem_url": "https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/images/postura-10.png",
+      "textoAlternativo": "Facilitador expressando entusiasmo genuíno com gestos acolhedores.",
+      "disponivel": true
     },
     {
       "id": "postura-11",
@@ -122,7 +132,8 @@
       "categoria": "a_evitar",
       "imagem": "images/postura-11.jpg",
       "imagem_url": "https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/images/postura-11.jpg",
-      "textoAlternativo": "Facilitadora com os braços cruzados diante do grupo, criando uma barreira corporal na situação retratada."
+      "textoAlternativo": "Facilitadora com os braços cruzados diante do grupo, criando uma barreira corporal na situação retratada.",
+      "disponivel": false
     },
     {
       "id": "postura-12",
@@ -132,7 +143,8 @@
       "categoria": "a_evitar",
       "imagem": "images/postura-12.jpg",
       "imagem_url": "https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/images/postura-12.jpg",
-      "textoAlternativo": "Facilitador de costas, lendo e apontando para a projeção sem manter contato com a turma."
+      "textoAlternativo": "Facilitador de costas, lendo e apontando para a projeção sem manter contato com a turma.",
+      "disponivel": false
     },
     {
       "id": "postura-13",
@@ -142,7 +154,8 @@
       "categoria": "a_evitar",
       "imagem": "images/postura-13.jpg",
       "imagem_url": "https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/images/postura-13.jpg",
-      "textoAlternativo": "Facilitadora com mãos nos bolsos e pouca presença corporal no contexto retratado."
+      "textoAlternativo": "Facilitadora com mãos nos bolsos e pouca presença corporal no contexto retratado.",
+      "disponivel": false
     },
     {
       "id": "postura-14",
@@ -152,7 +165,8 @@
       "categoria": "a_evitar",
       "imagem": "images/postura-14.jpg",
       "imagem_url": "https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/images/postura-14.jpg",
-      "textoAlternativo": "Facilitador com ombros encolhidos, olhando para baixo e evitando contato visual."
+      "textoAlternativo": "Facilitador com ombros encolhidos, olhando para baixo e evitando contato visual.",
+      "disponivel": false
     },
     {
       "id": "postura-15",
@@ -162,7 +176,8 @@
       "categoria": "a_evitar",
       "imagem": "images/postura-15.jpg",
       "imagem_url": "https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/images/postura-15.jpg",
-      "textoAlternativo": "Facilitadora apontando o dedo com expressão de confronto em direção a um participante."
+      "textoAlternativo": "Facilitadora apontando o dedo com expressão de confronto em direção a um participante.",
+      "disponivel": false
     },
     {
       "id": "postura-16",
@@ -172,7 +187,8 @@
       "categoria": "a_evitar",
       "imagem": "images/postura-16.jpg",
       "imagem_url": "https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/images/postura-16.jpg",
-      "textoAlternativo": "Facilitador apoiado na mesa de maneira desleixada durante a apresentação."
+      "textoAlternativo": "Facilitador apoiado na mesa de maneira desleixada durante a apresentação.",
+      "disponivel": false
     },
     {
       "id": "postura-17",
@@ -182,7 +198,8 @@
       "categoria": "a_evitar",
       "imagem": "images/postura-17.jpg",
       "imagem_url": "https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/images/postura-17.jpg",
-      "textoAlternativo": "Facilitadora segurando a bancada de forma tensa ao falar."
+      "textoAlternativo": "Facilitadora segurando a bancada de forma tensa ao falar.",
+      "disponivel": false
     },
     {
       "id": "postura-18",
@@ -192,7 +209,8 @@
       "categoria": "a_evitar",
       "imagem": "images/postura-18.jpg",
       "imagem_url": "https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/images/postura-18.jpg",
-      "textoAlternativo": "Facilitador olhando para o relógio de pulso repetidamente, aparentando impaciência."
+      "textoAlternativo": "Facilitador olhando para o relógio de pulso repetidamente, aparentando impaciência.",
+      "disponivel": false
     },
     {
       "id": "postura-19",
@@ -202,7 +220,8 @@
       "categoria": "a_evitar",
       "imagem": "images/postura-19.jpg",
       "imagem_url": "https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/images/postura-19.jpg",
-      "textoAlternativo": "Facilitadora olhando para o celular enquanto a turma aguarda."
+      "textoAlternativo": "Facilitadora olhando para o celular enquanto a turma aguarda.",
+      "disponivel": false
     },
     {
       "id": "postura-20",
@@ -212,7 +231,9 @@
       "categoria": "a_evitar",
       "imagem": "images/postura-20.jpg",
       "imagem_url": "https://raw.githubusercontent.com/hednorat-ai/posturas-facilitacao-card-sorting/main/images/postura-20.jpg",
-      "textoAlternativo": "Facilitador gesticulando de forma frenética e ansiosa durante a explicação."
+      "textoAlternativo": "Facilitador gesticulando de forma frenética e ansiosa durante a explicação.",
+      "disponivel": false
     }
-  ]
+  ],
+  "observacaoArquivos": "As imagens 01–10 foram localizadas e publicadas em images/*.png. As imagens 11–20 ainda precisam ser enviadas em images/*.jpg."
 }
