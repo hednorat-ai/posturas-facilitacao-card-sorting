@@ -36,18 +36,18 @@ footer{font-size:13px;color:#54604d;margin-top:23px;border-top:1px solid #e1ded6
 <body>
 <header><div class="eyebrow">Formação de Instrutores, Multiplicadores e Tutores</div>
 <h1>O que a postura comunica?</h1><p>Atividade de classificação • Observe, decida e receba uma devolutiva.</p>
-<span class="version">Versão revisada 3.1 • Botões verde e terracota</span></header>
+<span class="version">Versão revisada 4.0 • Correção de todas as respostas ao final</span></header>
 <main class="container">
 <section id="intro" class="panel start">
 <h2>Como funciona</h2>
 <div class="steps"><p><strong>1. Observe</strong> a imagem sem qualquer descrição ou pista sobre a resposta.</p>
 <p><strong>2. Classifique</strong> como postura recomendada (verde) ou a evitar (terracota).</p>
-<p><strong>3. Confira</strong> a explicação somente após escolher uma categoria.</p></div>
-<p>As 20 cartas aparecerão em ordem aleatória. Você poderá clicar nos botões, usar as teclas 1 e 2 ou arrastar a imagem.</p>
+<p><strong>3. Confira tudo no final:</strong> após a 20ª carta, veja a pontuação e as explicações de todas as respostas.</p></div>
+<p>As 20 cartas aparecem em ordem aleatória. Ao classificar cada imagem, a próxima é apresentada automaticamente. Nenhuma resposta é revelada durante a atividade.</p>
 <button type="button" id="startBtn" class="btn btn-primary">Iniciar atividade</button>
 </section>
 <section id="play" class="hidden">
-<div class="toprow"><div><strong id="counter">Carta 1 de 20</strong><span class="muted"> • <span id="tally">0</span> acertos</span></div>
+<div class="toprow"><div><strong id="counter">Carta 1 de 20</strong><span class="muted"> • <span id="tally">0</span> classificadas</span></div>
 <button type="button" class="btn btn-neutral" id="restart">Recomeçar</button></div>
 <div class="bar"><div id="fill" class="fill"></div></div>
 <div class="game">
@@ -56,7 +56,7 @@ footer{font-size:13px;color:#54604d;margin-top:23px;border-top:1px solid #e1ded6
 <div class="image-loading">Carregando imagem...</div><img id="photo" alt="Cena ilustrativa de uma situação de treinamento para analisar." draggable="false">
 </div>
 <div class="img-error hidden" id="imageError">A imagem desta carta não carregou.<div><button type="button" id="retryImage" class="btn btn-neutral">Recarregar imagem</button></div></div>
-<p class="hint">Observe a imagem e considere o comportamento da pessoa na situação. A descrição será revelada após sua escolha.</p>
+<p class="hint">Observe a imagem e considere o comportamento da pessoa na situação. A descrição e a classificação correta só aparecerão na revisão final.</p>
 </div>
 <div class="panel">
 <h2>Como você classificaria esta cena?</h2>
@@ -67,30 +67,25 @@ footer{font-size:13px;color:#54604d;margin-top:23px;border-top:1px solid #e1ded6
 <span class="glyph" aria-hidden="true">↻</span><span>Postura a evitar<small>Pode prejudicar a interação no contexto ilustrado</small></span></button>
 </div>
 <p class="hint">Atalhos: <strong>1</strong> recomendada, <strong>2</strong> a evitar. Também é possível arrastar a imagem até um botão.</p>
-<div id="feedback" class="feedback hidden" aria-live="polite">
-<strong id="feedbackHeading"></strong>
-<p id="feedbackCategory"></p>
-<p id="feedbackTitle"></p>
-<p id="feedbackDesc"></p>
-</div>
-<div class="next-area"><button type="button" id="nextBtn" class="btn btn-primary hidden">Próxima carta</button></div>
+<p class="hint">A escolha fica registrada, sem indicar se está correta. A carta seguinte aparece automaticamente.</p>
+<div class="next-area"><button type="button" id="undoBtn" class="btn btn-neutral">↶ Desfazer última escolha</button></div>
 </div>
 </div>
 </section>
 <section id="results" class="panel hidden">
-<h2>Atividade concluída</h2><p class="score" id="score"></p><p id="summary"></p>
+<h2>Correção das 20 respostas</h2><p class="score" id="score"></p><p id="summary"></p>
 <button type="button" id="againBtn" class="btn btn-primary">Refazer atividade</button>
-<h2 style="margin-top:32px">Revisão das 20 situações</h2><div id="review" class="results-list"></div>
+<h2 style="margin-top:32px">Devolutiva completa — respostas incorretas primeiro</h2><div id="review" class="results-list"></div>
 </section>
 <footer>As classificações são contextualizadas. Nenhum gesto isolado revela intenção, personalidade ou competência; fatores culturais, individuais e de acessibilidade devem ser considerados. Não associe uma conduta a um gênero.</footer>
 </main>
 <script>
 const CARDS = [{"id":"postura-01","numero":1,"titulo":"Facilitadora com braços abertos","descricao":"Facilitadora confiante, com braços abertos e gesticulação natural.","categoria":"recomendada","imagem":"images/postura-01.png"},{"id":"postura-02","numero":2,"titulo":"Contato visual acolhedor","descricao":"Facilitador fazendo contato visual acolhedor com os participantes.","categoria":"recomendada","imagem":"images/postura-02.png"},{"id":"postura-03","numero":3,"titulo":"Mãos abertas para engajar","descricao":"Facilitadora sorridente, com as mãos abertas para engajar a turma.","categoria":"recomendada","imagem":"images/postura-03.png"},{"id":"postura-04","numero":4,"titulo":"Movimentação tranquila","descricao":"Facilitador caminhando tranquilamente pelo espaço com postura ereta.","categoria":"recomendada","imagem":"images/postura-04.png"},{"id":"postura-05","numero":5,"titulo":"Escuta ativa","descricao":"Facilitadora ouvindo um participante com atenção e inclinação leve.","categoria":"recomendada","imagem":"images/postura-05.png"},{"id":"postura-06","numero":6,"titulo":"Apontar com a mão aberta","descricao":"Facilitador indicando o slide com a mão aberta, sem apontar o dedo.","categoria":"recomendada","imagem":"images/postura-06.png"},{"id":"postura-07","numero":7,"titulo":"Presença diante da câmera","descricao":"Facilitadora online olhando diretamente para a câmera com semblante amigável.","categoria":"recomendada","imagem":"images/postura-07.png"},{"id":"postura-08","numero":8,"titulo":"Gestos calmos","descricao":"Facilitador em frente à turma utilizando gestos calmos e alinhados à fala.","categoria":"recomendada","imagem":"images/postura-08.png"},{"id":"postura-09","numero":9,"titulo":"Postura alinhada","descricao":"Facilitadora em pé, com pernas alinhadas e braços relaxados.","categoria":"recomendada","imagem":"images/postura-09.png"},{"id":"postura-10","numero":10,"titulo":"Entusiasmo genuíno","descricao":"Facilitador expressando entusiasmo genuíno com gestos acolhedores.","categoria":"recomendada","imagem":"images/postura-10.png"},{"id":"postura-11","numero":11,"titulo":"Braços cruzados","descricao":"Facilitadora com os braços cruzados diante do grupo, criando uma barreira corporal na situação retratada.","categoria":"a_evitar","imagem":"images/postura-11.png"},{"id":"postura-12","numero":12,"titulo":"De costas para a turma","descricao":"Facilitador de costas, lendo e apontando para a projeção sem manter contato com a turma.","categoria":"a_evitar","imagem":"images/postura-12.png"},{"id":"postura-13","numero":13,"titulo":"Mãos nos bolsos","descricao":"Facilitadora com mãos nos bolsos e pouca presença corporal no contexto retratado.","categoria":"a_evitar","imagem":"images/postura-13.png"},{"id":"postura-14","numero":14,"titulo":"Ombros encolhidos e olhar baixo","descricao":"Facilitador com ombros encolhidos, olhando para baixo e evitando contato visual.","categoria":"a_evitar","imagem":"images/postura-14.png"},{"id":"postura-15","numero":15,"titulo":"Apontar o dedo de forma hostil","descricao":"Facilitadora apontando o dedo com expressão de confronto em direção a um participante.","categoria":"a_evitar","imagem":"images/postura-15.png"},{"id":"postura-16","numero":16,"titulo":"Apoio excessivo na mesa","descricao":"Facilitador apoiado na mesa de maneira desleixada durante a apresentação.","categoria":"a_evitar","imagem":"images/postura-16.png"},{"id":"postura-17","numero":17,"titulo":"Segurar firmemente a bancada","descricao":"Facilitadora segurando a bancada de forma tensa ao falar.","categoria":"a_evitar","imagem":"images/postura-17.png"},{"id":"postura-18","numero":18,"titulo":"Consultar repetidamente o relógio","descricao":"Facilitador olhando para o relógio de pulso repetidamente, aparentando impaciência.","categoria":"a_evitar","imagem":"images/postura-18.png"},{"id":"postura-19","numero":19,"titulo":"Distração com o celular","descricao":"Facilitadora olhando para o celular enquanto a turma aguarda.","categoria":"a_evitar","imagem":"images/postura-19.png"},{"id":"postura-20","numero":20,"titulo":"Gesticulação frenética","descricao":"Facilitador gesticulando de forma frenética e ansiosa durante a explicação.","categoria":"a_evitar","imagem":"images/postura-20.png"}];
 const $ = (id) => document.getElementById(id);
-let deck=[], index=0, points=0, selected=null, records=[],loadSeq=0;
+let deck=[], index=0, points=0, selected=null, records=[], loadSeq=0, lastAccepted=-Infinity;
 const expected = (c) => c==="recomendada"?"Postura recomendada":"Postura a evitar";
 function shuffle(items){const a=items.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a}
-function begin(){deck=shuffle(CARDS);index=0;points=0;selected=null;records=[];$("intro").classList.add("hidden");$("results").classList.add("hidden");$("play").classList.remove("hidden");showCard();window.scrollTo({top:0,behavior:"smooth"})}
+function begin(){deck=shuffle(CARDS);index=0;points=0;selected=null;records=[];lastAccepted=-Infinity;$("intro").classList.add("hidden");$("results").classList.add("hidden");$("play").classList.remove("hidden");showCard();window.scrollTo({top:0,behavior:"smooth"})}
 function loadImage(){
  const c=deck[index],seq=++loadSeq;
  $("imageError").classList.add("hidden");
@@ -105,41 +100,39 @@ function showCard(){
  if(index>=deck.length){finish();return}
  selected=null;
  $("counter").textContent="Carta "+(index+1)+" de "+deck.length;
- $("tally").textContent=points;
+ $("tally").textContent=index;
  $("fill").style.width=String(index/deck.length*100)+"%";
- $("feedback").className="feedback hidden";
- $("feedbackHeading").textContent="";
- $("feedbackCategory").textContent="";
- $("feedbackTitle").textContent="";
- $("feedbackDesc").textContent="";
- $("nextBtn").classList.add("hidden");
- $("goodBtn").disabled=false;$("badBtn").disabled=false;
+ $("goodBtn").disabled=false;
+ $("badBtn").disabled=false;
+ $("undoBtn").disabled=(records.length===0);
  loadImage();
 }
 function classify(choice){
- if(selected!==null||index>=deck.length)return;
+ if(selected!==null||index>=deck.length||$("play").classList.contains("hidden"))return;
+ if(performance.now()-lastAccepted<400)return;
+ lastAccepted=performance.now();
  const c=deck[index];
  selected=choice;
  const right=(choice===c.categoria);
  if(right)points++;
  records.push({card:c,choice,right});
- $("tally").textContent=points;
- $("goodBtn").disabled=true;$("badBtn").disabled=true;
- $("feedback").className="feedback"+(right?"":" review");
- $("feedbackHeading").textContent=right?"✓ Correto!":"↻ Vamos revisar essa situação";
- $("feedbackCategory").textContent="Sua escolha: "+expected(choice)+" · Esperado: "+expected(c.categoria);
- $("feedbackTitle").textContent=c.titulo;
- $("feedbackDesc").textContent=c.descricao;
- $("nextBtn").textContent=index===deck.length-1?"Ver resultado":"Próxima carta";
- $("nextBtn").classList.remove("hidden");
+ index++;
+ showCard();
 }
-function advance(){if(selected===null)return;index++;showCard()}
+function undo(){
+ if(!records.length||$("play").classList.contains("hidden"))return;
+ const previous=records.pop();
+ if(previous.right)points--;
+ index=records.length;
+ lastAccepted=-Infinity;
+ showCard();
+}
 function finish(){
  $("play").classList.add("hidden");$("results").classList.remove("hidden");
  $("score").textContent=points+" / "+deck.length+" acertos";
- $("summary").textContent="Revise as situações abaixo. A classificação foi feita com base na proposta pedagógica de cada cena.";
+ $("summary").textContent="Todas as respostas foram corrigidas de uma só vez. As divergências aparecem primeiro, com sua escolha, o resultado esperado e a explicação.";
  $("review").replaceChildren();
- for(const r of records){
+ for(const r of [...records].sort((a,b)=>Number(a.right)-Number(b.right))){
  const el=document.createElement("article");el.className="result-card";
  const img=document.createElement("img");img.src=r.card.imagem;img.alt="Imagem da situação analisada";
  const body=document.createElement("div");body.className="result-body";
@@ -155,18 +148,20 @@ $("restart").addEventListener("click",begin);
 $("againBtn").addEventListener("click",begin);
 $("goodBtn").addEventListener("click",()=>classify("recomendada"));
 $("badBtn").addEventListener("click",()=>classify("a_evitar"));
-$("nextBtn").addEventListener("click",advance);
+
 $("retryImage").addEventListener("click",loadImage);
-$("imageBox").addEventListener("dragstart",e=>{if(selected!==null){e.preventDefault();return}e.dataTransfer.setData("text/plain","facilitacao")});
+$("undoBtn").addEventListener("click",undo);
+$("imageBox").addEventListener("dragstart",e=>{if($("play").classList.contains("hidden")){e.preventDefault();return}e.dataTransfer.setData("text/plain","facilitacao")});
 for(const el of [$("goodBtn"),$("badBtn")]){
- el.addEventListener("dragover",e=>{if(selected!==null)return;e.preventDefault();el.classList.add("over")});
+ el.addEventListener("dragover",e=>{if($("play").classList.contains("hidden"))return;e.preventDefault();el.classList.add("over")});
  el.addEventListener("dragleave",()=>el.classList.remove("over"));
  el.addEventListener("drop",e=>{e.preventDefault();el.classList.remove("over");classify(el.dataset.choice)});
 }
 window.addEventListener("keydown",e=>{
  if($("play").classList.contains("hidden")||["INPUT","TEXTAREA","SELECT"].includes(document.activeElement?.tagName))return;
- if(selected===null && e.key==="1"){e.preventDefault();classify("recomendada")}
- else if(selected===null&&e.key==="2"){e.preventDefault();classify("a_evitar")}
- else if(selected!==null&&e.key==="Enter"&&!["BUTTON"].includes(document.activeElement?.tagName)){e.preventDefault();advance()}
+ if(e.key==="1"){e.preventDefault();classify("recomendada")}
+ else if(e.key==="2"){e.preventDefault();classify("a_evitar")}
+ else if(e.key==="Backspace"){e.preventDefault();undo()}
+ 
 });
 </script></body></html>
